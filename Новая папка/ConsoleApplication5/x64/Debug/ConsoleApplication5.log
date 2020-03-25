@@ -1,4 +1,0 @@
-﻿  ConsoleApplication5.cpp
-C:\Печенкина\ConsoleApplication5\ConsoleApplication5.cpp(124): warning C4715:  primary: значение возвращается не при всех путях выполнения
-C:\Печенкина\ConsoleApplication5\ConsoleApplication5.cpp(95): warning C4715:  Token_stream::get: значение возвращается не при всех путях выполнения
-  ConsoleApplication5.vcxproj -> C:\Печенкина\x64\Debug\ConsoleApplication5.exe

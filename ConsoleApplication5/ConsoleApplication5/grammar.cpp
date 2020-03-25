@@ -15,13 +15,6 @@ double primary(Token_stream& ts)
 		return d;
 	}
 	case '8':
-		//if (t.kind == '!') {
-		//	if (t.value == 0)return 1;
-		//}
-		//else
-		//{
-		//
-		//}
 		return t.value; 
 	case 'q': {ts.putback(t); return 0; }
 
@@ -30,12 +23,33 @@ double primary(Token_stream& ts)
 	}
 }
 
-//------------------------------------------------------------------------------
+double fuckt(Token_stream& ts) {
+	double left = primary(ts);
+	Token t = ts.get();
+	int k = 1;
+	while (true) {
+		switch (t.kind)
+		{
+		case '!': {
+			if (left == 0)return 0;
+			else {
+				k = 1;
+				for (int i = 1;i <= left;i++) { k *= i; }
+				left = k;
+				t = ts.get();break;
+			}
+		}
+		default:
+			ts.putback(t);
+			return left;
+		}
+	}
+}//------------------------------------------------------------------------------
 
 // deal with *, /, and %
 double term(Token_stream& ts)
 {
-	double left = primary(ts);
+	double left = fuckt(ts);
 	Token t = ts.get();        
 
 	while (true) {

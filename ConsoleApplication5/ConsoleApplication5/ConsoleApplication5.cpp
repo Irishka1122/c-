@@ -1,10 +1,10 @@
-﻿
+﻿#include <iostream>
 #include "std_lib_facilities.h"
 #include "token.h"
 #include "token_stream.h"
 #include "grammar.h"
 Token_stream ts;       
-  
+using namespace std;
 int main()
 try
 {
